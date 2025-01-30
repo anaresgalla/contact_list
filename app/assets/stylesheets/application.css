@@ -1,1 +1,25 @@
 @import "bootstrap";
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid dimgray;
+  color: lightgray;
+  a {
+    color: gray;
+    &:hover{
+      color: darkgray;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
