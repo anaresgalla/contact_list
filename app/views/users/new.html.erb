@@ -1,14 +1,15 @@
-<div class="row">
-  <div class="col-xs-12">
-    <h1>Cadastre-se</h1>
-  </div>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="mb-4">Cadastre-se</h1>
+    </div>
 
-  <div class="col-md-6 col-md-offset-3 col-xs-12">
-    <%= form_for @user do |f| %>
+    <div class="col-md-6 mx-auto">
+      <%= form_with model: @user, local: true do |f| %>
+        <%= render 'fields', f: f %>
 
-      <%= render 'fields', f: f %>
-
-      <%= f.submit 'Cadastrar', class: 'btn btn-primary' %>
-    <% end %>
+        <%= f.submit 'Cadastrar', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
   </div>
 </div>

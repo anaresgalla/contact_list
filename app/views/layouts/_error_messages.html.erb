@@ -1,12 +1,11 @@
 <% if object.errors.any? %>
-  <div class="">
-    <div class="alert alert-danger">
-      Ops! Encontramos <%= pluralize(object.errors.count, 'erro', 'erros') %>
-      <ul>
-        <% object.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Ops!</strong> Encontramos <%= pluralize(object.errors.count, 'erro', 'erros') %>:
+    <ul class="mb-0">
+      <% object.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
   </div>
 <% end %>

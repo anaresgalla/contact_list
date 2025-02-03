@@ -22,6 +22,13 @@ module ContactList
     # in config/environments, which are processed later.
     config.i18n.default_locale = :'pt-BR'
 
+    # Remove Sprockets configuration if present (Propshaft is being used)
+    # Comment or remove the following line if Sprockets is loaded
+    # config.assets.enabled = false
+
+    # Ensure Propshaft is enabled and Sprockets is disabled
+    config.assets.enabled = false if defined?(Sprockets)
+
     # config.i18n.available_locales = [ :en, :'pt-BR' ]  # Add other locales as needed
 
     # config.time_zone = "Central Time (US & Canada)"

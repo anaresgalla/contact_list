@@ -36,7 +36,7 @@
             <%= link_to 'Editar', edit_user_contact_path(current_user, c), class: 'btn btn-warning' %>
           </td>
           <td>
-            <%= link_to 'Excluir', user_contact_path(current_user, c), method: :delete, class: 'btn btn-danger', data: { confirm: 'Tem certeza que deseja excluir?' } %>
+            <%= button_to 'Excluir', user_contact_path(current_user, c), method: :delete, class: 'btn btn-danger', data: { confirm: 'Tem certeza que deseja excluir?' } %>
           </td>
         </tr>
         <% end %>
