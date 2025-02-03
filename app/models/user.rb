@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  before_save :email_downcase
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :password, length: { minimum: 6 }
@@ -8,4 +9,9 @@ class User < ApplicationRecord
                                     uniqueness: { case_sensitive: true }
 
   has_many :contacts, dependent: :destroy
+
+  private
+    def email_downcase
+      self.email.downcase!
+    end
 end
